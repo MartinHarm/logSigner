@@ -17,10 +17,8 @@ public class SHA256TreeHashCalculator {
      * @param file A file to compute checksums on
      * @return a byte[][] containing the checksums of each 1 MB chunk
      * @throws IOException              Thrown if there's an IOException when reading the file
-     * @throws NoSuchAlgorithmException Thrown if SHA-256 MessageDigest can't be found
      */
-    private static byte[][] getSHA256HashesForLines(File file) throws IOException,
-            NoSuchAlgorithmException {
+    private static byte[][] getSHA256HashesForLines(File file) throws IOException {
 
         DataHasher dataHasher = new DataHasher(HashAlgorithm.SHA2_256);
 
@@ -77,8 +75,7 @@ public class SHA256TreeHashCalculator {
      * @return A byte[] containing the SHA-256 tree hash for the input chunks
      * @throws NoSuchAlgorithmException Thrown if SHA-256 MessageDigest can't be found
      */
-    private static byte[] calculateSHA256TreeHash(byte[][] lineHashes)
-            throws NoSuchAlgorithmException {
+    private static byte[] calculateSHA256TreeHash(byte[][] lineHashes) {
 
         DataHasher dataHasher = new DataHasher(HashAlgorithm.SHA2_256);
 
@@ -99,8 +96,8 @@ public class SHA256TreeHashCalculator {
 
                 if (prevLvlHashes.length - i > 1) {
                     dataHasher.reset();
-                    dataHasher.addData(prevLvlHashes[i]);
-                    dataHasher.addData(prevLvlHashes[i + 1]);
+                    dataHasher.addData(prevLvlHashes[i])
+                              .addData(prevLvlHashes[i + 1]);
                     currLvlHashes[j] = dataHasher.getHash().getValue();
                 } else {
                     currLvlHashes[j] = prevLvlHashes[i];
@@ -118,10 +115,8 @@ public class SHA256TreeHashCalculator {
      * @param inputFile a File to compute the SHA-256 tree hash for
      * @return a byte[] containing the SHA-256 tree hash
      * @throws IOException              Thrown if there's an issue reading the input file
-     * @throws NoSuchAlgorithmException Thrown if SHA-256 MessageDigest can't be found
      */
-    public static byte[] calculateSHA256TreeHash(File inputFile) throws IOException,
-            NoSuchAlgorithmException {
+    public static byte[] calculateSHA256TreeHash(File inputFile) throws IOException {
         byte[][] lineHashes = getSHA256HashesForLines(inputFile);
         return calculateSHA256TreeHash(lineHashes);
     }

@@ -29,10 +29,6 @@ public class LogSignApplication {
             System.err.format("Exception when reading from file %s: %s", inputFile,
                     ioe.getMessage());
             System.exit(-1);
-        } catch (NoSuchAlgorithmException nsme) {
-            System.err.format("Cannot locate MessageDigest algorithm for SHA-256: %s",
-                    nsme.getMessage());
-            System.exit(-1);
         }
     }
 
