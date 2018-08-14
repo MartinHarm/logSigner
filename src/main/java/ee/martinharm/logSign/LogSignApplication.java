@@ -12,8 +12,6 @@ import ee.martinharm.logSign.calculators.SHA256TreeHashCalculator;
 import ee.martinharm.logSign.converters.HexConverter;
 import java.io.File;
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-
 
 public class LogSignApplication {
     public static void main(String[] args) {
@@ -44,6 +42,5 @@ public class LogSignApplication {
             System.err.println(e.getMessage());
         }
     }
-
 
 }

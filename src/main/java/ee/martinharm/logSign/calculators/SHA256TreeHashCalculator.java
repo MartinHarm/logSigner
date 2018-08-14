@@ -6,7 +6,6 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.security.NoSuchAlgorithmException;
 
 public class SHA256TreeHashCalculator {
 
@@ -73,7 +72,6 @@ public class SHA256TreeHashCalculator {
      *
      * @param lineHashes An array of SHA-256 checksums
      * @return A byte[] containing the SHA-256 tree hash for the input chunks
-     * @throws NoSuchAlgorithmException Thrown if SHA-256 MessageDigest can't be found
      */
     private static byte[] calculateSHA256TreeHash(byte[][] lineHashes) {
 
