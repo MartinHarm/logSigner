@@ -5,17 +5,17 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class SHA256TreeHashCalculatorTest {
     private ClassLoader classLoader = getClass().getClassLoader();
 
     @Test
-    public void shouldCalculateCorrectTreeTopHashForEmptyLogFile() throws IOException{
+    public void shouldCalculateCorrectTreeTopHashForEmptyLogFile() throws IOException {
         File inputFile = new File(Objects.requireNonNull(classLoader.getResource("emptyLog.txt")).getFile());
         byte[] treeTopHash = SHA256TreeHashCalculator.calculateSHA256TreeHash(inputFile);
         String hexTreeTopHash = HexConverter.convert(treeTopHash);
@@ -23,7 +23,7 @@ public class SHA256TreeHashCalculatorTest {
     }
 
     @Test
-    public void shouldCalculateCorrectTreeTopHashForLogFile() throws IOException{
+    public void shouldCalculateCorrectTreeTopHashForLogFile() throws IOException {
         File inputFile = new File(Objects.requireNonNull(classLoader.getResource("log.txt")).getFile());
         byte[] treeTopHash = SHA256TreeHashCalculator.calculateSHA256TreeHash(inputFile);
         String hexTreeTopHash = HexConverter.convert(treeTopHash);
@@ -31,7 +31,7 @@ public class SHA256TreeHashCalculatorTest {
     }
 
     @Test
-    public void shouldCalculateCorrectTreeTopHashForSingleLineLogFile() throws IOException{
+    public void shouldCalculateCorrectTreeTopHashForSingleLineLogFile() throws IOException {
         File inputFile = new File(Objects.requireNonNull(classLoader.getResource("singleLineLog.txt")).getFile());
         byte[] treeTopHash = SHA256TreeHashCalculator.calculateSHA256TreeHash(inputFile);
         String hexTreeTopHash = HexConverter.convert(treeTopHash);
@@ -39,7 +39,7 @@ public class SHA256TreeHashCalculatorTest {
     }
 
     @Test
-    public void shouldCalculateCorrectTreeTopHashForTripleLineLogFile() throws IOException{
+    public void shouldCalculateCorrectTreeTopHashForTripleLineLogFile() throws IOException {
         File inputFile = new File(Objects.requireNonNull(classLoader.getResource("tripleLineLog.txt")).getFile());
         byte[] treeTopHash = SHA256TreeHashCalculator.calculateSHA256TreeHash(inputFile);
         String hexTreeTopHash = HexConverter.convert(treeTopHash);

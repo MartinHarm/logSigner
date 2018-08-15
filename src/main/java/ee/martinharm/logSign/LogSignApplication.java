@@ -10,12 +10,13 @@ import com.guardtime.ksi.service.client.http.CredentialsAwareHttpSettings;
 import com.guardtime.ksi.service.http.simple.SimpleHttpSigningClient;
 import ee.martinharm.logSign.calculators.SHA256TreeHashCalculator;
 import ee.martinharm.logSign.converters.HexConverter;
+
 import java.io.File;
 import java.io.IOException;
 
 public class LogSignApplication {
     public static void main(String[] args) {
-        File inputFile = new File("c://log.txt");
+        File inputFile = new File(args[0]);
         try {
             //Hashing
             byte[] treeHash = SHA256TreeHashCalculator.calculateSHA256TreeHash(inputFile);

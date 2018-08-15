@@ -3,6 +3,7 @@ package ee.martinharm.logSign.converters;
 public class HexConverter {
     /**
      * Hexadecimal representation of the input byte array
+     *
      * @param data a byte[] to convert to Hex characters
      * @return A String containing Hex characters
      * https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html

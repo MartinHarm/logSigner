@@ -19,3 +19,6 @@ build:
 
 run: 
     java -jar logSign-1.0-jar-with-dependencies.jar log.txt
+    
+output:
+    SHA256 treehash of log.txt lines    
