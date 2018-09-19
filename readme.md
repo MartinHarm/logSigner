@@ -11,14 +11,10 @@
                     |  $$$$$$/              |  $$$$$$/          
                      \______/                \______/           
 
-
-Uses Apache Maven and has javadoc and Junit tests
-
 build:
     mvn clean install
 
 run: 
-    java -jar logSign-1.0-jar-with-dependencies.jar log.txt
-    
+    java -jar logSign-1.0-jar-with-dependencies.jar {PATH TO LOG FILE} [OPTIONALLY SPECIFiED LINE]
 output:
-    SHA256 treehash of log.txt lines    
+    SHA256 hashTree of provided file lines    

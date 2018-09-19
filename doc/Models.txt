@@ -1,0 +1,46 @@
+http://nomnoml.com/
+
+
+7 Nodes
+
+#.node: fill=#8f8
+#.selectednode: fill=#8ff
+#stroke: #111111
+#lineWidth: 2
+#zoom: 2
+[0]->[01]
+[1]->[01]
+[2]->[23]
+[3]->[23]
+[4]->[<node>45]
+[5]->[45]
+[<selectednode>6]--[<selectednode>6*]
+[01]->[<node>0123]
+[23]->[0123]
+[45]->[<node>456]
+[6*]->[456]
+[0123]->[<node>0123456]
+[456]->[0123456]
+
+
+8 Nodes
+
+#.node: fill=#8f8
+#.selectednode: fill=#8ff
+#stroke: #000000
+#lineWidth: 2
+#zoom: 2
+[<selectednode>0]->[<node>01]
+[<node>1]->[01]
+[2]->[<node>23]
+[3]->[23]
+[4]->[45]
+[5]->[45]
+[6]->[67]
+[7]->[67]
+[01]->[<node>0123]
+[23]->[0123]
+[45]->[<node>4567]
+[67]->[4567]
+[0123]->[<node>01234567]
+[4567]->[01234567]
